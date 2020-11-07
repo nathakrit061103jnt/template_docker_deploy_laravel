@@ -26,7 +26,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "8001:80"
+      - "80:80"
     volumes:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
@@ -59,7 +59,7 @@ services:
     container_name: phpmyadminN
     restart: always
     ports:
-      - "9998:80"
+      - "81:80"
     networks:
       - app-network
     environment:
