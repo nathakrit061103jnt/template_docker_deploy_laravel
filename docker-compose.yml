@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: digitalocean.com/php
     container_name: app
-    restart: unless-stopped
+    restart: always
     tty: true
     environment:
       SERVICE_NAME: app
@@ -23,7 +23,7 @@ services:
   webserver:
     image: nginx:alpine
     container_name: webserver
-    restart: unless-stopped
+    restart: always
     tty: true
     ports:
       - "80:80"
@@ -35,9 +35,9 @@ services:
 
   #MySQL Service
   db:
-    image: mysql:8.0
+    image: mysql:5.6
     container_name: db
-    restart: unless-stopped
+    restart: always
     tty: true
     ports:
       - "3306:3306"
